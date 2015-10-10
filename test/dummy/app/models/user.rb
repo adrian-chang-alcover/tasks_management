@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-	# has_tasks
+	has_tasks
 end
