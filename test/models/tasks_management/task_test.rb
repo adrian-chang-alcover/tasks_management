@@ -33,5 +33,15 @@ module TasksManagement
         assert_includes task.owners, t.owner
       end
     end
+
+    test "start!" do
+      task = TasksManagement::Task.new
+      task.pending!
+      
+      task.start!
+      assert_equal 'started', task.state
+
+      assert_raises TasksManagement::InvalidTaskStateException do task.start! end
+    end
   end
 end

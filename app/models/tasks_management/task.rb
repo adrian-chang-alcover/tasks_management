@@ -16,5 +16,10 @@ module TasksManagement
   			end
   		end
   	end
+
+  	def start!
+  		raise TasksManagement::InvalidTaskStateException unless self.state == 'pending'
+  		self.started!
+  	end
   end
 end
