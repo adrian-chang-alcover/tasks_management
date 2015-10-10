@@ -36,8 +36,12 @@ module TasksManagement
 
     test "start!" do
       task = TasksManagement::Task.new
-      task.pending!
       
+      task.pending!      
+      task.start!
+      assert_equal 'started', task.state
+
+      task.rejected!      
       task.start!
       assert_equal 'started', task.state
 
@@ -52,6 +56,16 @@ module TasksManagement
       assert_equal 'finished', task.state
 
       assert_raises TasksManagement::InvalidTaskStateException do task.finish! end
+    end
+
+    test "accept!" do
+      task = TasksManagement::Task.new
+      task.finished!
+      
+      task.accept!
+      assert_equal 'accepted', task.state
+
+      assert_raises TasksManagement::InvalidTaskStateException do task.accept! end
     end
   end
 end

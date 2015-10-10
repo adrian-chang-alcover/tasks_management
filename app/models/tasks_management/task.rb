@@ -6,7 +6,7 @@ module TasksManagement
   	belongs_to :parent, class_name: "Task"
 
   	enum priority: [:high, :medium, :low]
-  	enum state: [:pending, :started, :finished, :accepted]
+  	enum state: [:pending, :rejected, :started, :finished, :accepted]
 
   	after_save do
   		unless self.owners.blank?
@@ -18,13 +18,18 @@ module TasksManagement
   	end
 
   	def start!
-  		raise TasksManagement::InvalidTaskStateException unless self.state == 'pending'
+  		raise TasksManagement::InvalidTaskStateException unless self.state == 'pending' or self.state == 'rejected'
   		self.started!
   	end
 
   	def finish!
   		raise TasksManagement::InvalidTaskStateException unless self.state == 'started'
   		self.finished!
+  	end
+
+  	def accept!
+  		raise TasksManagement::InvalidTaskStateException unless self.state == 'finished'
+  		self.accepted!
   	end
   end
 end
