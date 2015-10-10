@@ -31,5 +31,10 @@ module TasksManagement
   		raise TasksManagement::InvalidTaskStateException unless self.state == 'finished'
   		self.accepted!
   	end
+
+  	def reject!
+  		raise TasksManagement::InvalidTaskStateException unless self.state == 'finished'
+  		self.rejected!
+  	end
   end
 end

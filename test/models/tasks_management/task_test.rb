@@ -67,5 +67,15 @@ module TasksManagement
 
       assert_raises TasksManagement::InvalidTaskStateException do task.accept! end
     end
+
+    test "reject!" do
+      task = TasksManagement::Task.new
+      task.finished!
+      
+      task.reject!
+      assert_equal 'rejected', task.state
+
+      assert_raises TasksManagement::InvalidTaskStateException do task.reject! end
+    end
   end
 end
