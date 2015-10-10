@@ -8,9 +8,12 @@ module TasksManagement
   	enum priority: [:high, :medium, :low]
   	enum state: [:pending, :started, :finished, :accepted]
 
-  	before_save do
+  	after_save do
   		unless self.owners.blank?
   			raise TasksManagement::OwnerIdSettedException unless self.owner.blank?  			
+  			self.owners.each do |owner|
+  				TasksManagement::Task.create(title: title, description: description, priority: priority, state: state, parent_id: id, file: file, owner: owner, requester: requester, end_date: end_date)
+  			end
   		end
   	end
   end
