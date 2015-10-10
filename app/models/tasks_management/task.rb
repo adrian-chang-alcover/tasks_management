@@ -21,5 +21,10 @@ module TasksManagement
   		raise TasksManagement::InvalidTaskStateException unless self.state == 'pending'
   		self.started!
   	end
+
+  	def finish!
+  		raise TasksManagement::InvalidTaskStateException unless self.state == 'started'
+  		self.finished!
+  	end
   end
 end

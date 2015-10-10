@@ -43,5 +43,15 @@ module TasksManagement
 
       assert_raises TasksManagement::InvalidTaskStateException do task.start! end
     end
+
+    test "finish!" do
+      task = TasksManagement::Task.new
+      task.started!
+      
+      task.finish!
+      assert_equal 'finished', task.state
+
+      assert_raises TasksManagement::InvalidTaskStateException do task.finish! end
+    end
   end
 end
