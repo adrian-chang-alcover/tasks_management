@@ -6,7 +6,6 @@ one:
   priority: 1
   state: 1
   parent_id: 1
-  file: MyString
   owner_id: 1
   requester_id: 1
   end_date: 2015-10-10
@@ -17,7 +16,6 @@ two:
   priority: 1
   state: 1
   parent_id: 1
-  file: MyString
   owner_id: 1
   requester_id: 1
   end_date: 2015-10-10

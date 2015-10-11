@@ -56,7 +56,9 @@ module TasksManagement
 
       # Only allow a trusted parameter "white list" through.
       def task_params
-        params.require(:task).permit(:title, :description, :priority, :state, :parent_id, :file, :owner_id, :requester_id, :end_date)
+        params['task']['priority'] = params['task']['priority'].to_i
+        params['task']['state'] = params['task']['state'].to_i
+        params.require(:task).permit(:title, :description, :priority, :state, :parent_id, :owner_id, :requester_id, :end_date)
       end
   end
 end

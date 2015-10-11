@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Adrian Chang"]
   s.email       = ["adrian.chang.alcover@gmail.com"]
   s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of TasksManagement."
-  s.description = "TODO: Description of TasksManagement."
+  s.summary     = "It is for a simple tasks management"
+  s.description = "TasksManagement permits set title, description, state, priority, owner, requester, task parent, end date and attach a file for any task."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
