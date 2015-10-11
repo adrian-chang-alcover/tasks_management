@@ -6,7 +6,6 @@ class CreateTasksManagementTasks < ActiveRecord::Migration
       t.integer :priority
       t.integer :state
       t.integer :parent_id
-      t.string :file
       t.integer :owner_id
       t.integer :requester_id
       t.date :end_date

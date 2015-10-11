@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20151010135059) do
     t.integer  "priority"
     t.integer  "state"
     t.integer  "parent_id"
-    t.string   "file"
     t.integer  "owner_id"
     t.integer  "requester_id"
     t.date     "end_date"

@@ -20,7 +20,7 @@ module TasksManagement
 
     test "should create task" do
       assert_difference('Task.count') do
-        post :create, task: { description: @task.description, end_date: @task.end_date, file: @task.file, owner_id: @task.owner_id, parent_id: @task.parent_id, priority: @task.priority, requester_id: @task.requester_id, state: @task.state, title: @task.title }
+        post :create, task: { description: @task.description, end_date: @task.end_date, owner_id: @task.owner_id, parent_id: @task.parent_id, priority: @task.priority, requester_id: @task.requester_id, state: @task.state, title: @task.title }
       end
 
       assert_redirected_to task_path(assigns(:task))
@@ -37,7 +37,7 @@ module TasksManagement
     end
 
     test "should update task" do
-      patch :update, id: @task, task: { description: @task.description, end_date: @task.end_date, file: @task.file, owner_id: @task.owner_id, parent_id: @task.parent_id, priority: @task.priority, requester_id: @task.requester_id, state: @task.state, title: @task.title }
+      patch :update, id: @task, task: { description: @task.description, end_date: @task.end_date, owner_id: @task.owner_id, parent_id: @task.parent_id, priority: @task.priority, requester_id: @task.requester_id, state: @task.state, title: @task.title }
       assert_redirected_to task_path(assigns(:task))
     end
 
