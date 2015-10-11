@@ -12,7 +12,7 @@ module TasksManagement
   		unless self.owners.blank?
   			raise TasksManagement::OwnerIdSettedException unless self.owner.blank?  			
   			self.owners.each do |owner|
-  				TasksManagement::Task.create(title: title, description: description, priority: priority, state: state, parent_id: id, file: file, owner: owner, requester: requester, end_date: end_date)
+  				TasksManagement::Task.create(title: title, description: description, priority: priority, state: state, parent_id: id, owner: owner, requester: requester, end_date: end_date)
   			end
   		end
   	end

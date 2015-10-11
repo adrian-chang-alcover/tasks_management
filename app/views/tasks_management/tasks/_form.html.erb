@@ -32,10 +32,6 @@
     <%= f.collection_select :parent_id, TasksManagement::Task.all, :id, :title, include_blank: true %>
   </div>
   <div class="field">
-    <%= f.label :file %><br>
-    <%= f.text_field :file %>
-  </div>
-  <div class="field">
     <%= f.label :owner_id %><br>
     <%= f.number_field :owner_id %>
   </div>

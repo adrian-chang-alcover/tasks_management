@@ -1,7 +1,7 @@
 # TasksManagement
 
 TasksManagement is for a simple tasks management. 
-TasksManagement permits set title, description, state, priority, owner, requester, task parent, end date and attach a file for any task.
+TasksManagement permits set title, description, state, priority, owner, requester, task parent and end date for any task.
 
 ## Installation
 
