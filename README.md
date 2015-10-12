@@ -1,5 +1,7 @@
 # TasksManagement
 
+[![Build Status](https://semaphoreci.com/api/v1/projects/d1252247-d110-4cff-81f4-06c832d0b19c/567314/badge.svg)](https://semaphoreci.com/adrian-chang/tasks_management)
+
 TasksManagement is for a simple tasks management. 
 TasksManagement permits set title, description, state, priority, owner, requester, task parent and end date for any task.
 
