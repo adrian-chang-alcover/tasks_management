@@ -27,7 +27,7 @@ module TasksManagement
       @task = Task.new(task_params)
 
       if @task.save
-        redirect_to @task, notice: 'Task was successfully created.'
+        redirect_to params['refer'].blank? ? @task : params['refer'], notice: 'Task was successfully created.'        
       else
         render :new
       end
@@ -36,7 +36,7 @@ module TasksManagement
     # PATCH/PUT /tasks/1
     def update
       if @task.update(task_params)
-        redirect_to @task, notice: 'Task was successfully updated.'
+        redirect_to params['refer'].blank? ? @task : params['refer'], notice: 'Task was successfully updated.'
       else
         render :edit
       end
@@ -45,7 +45,7 @@ module TasksManagement
     # DELETE /tasks/1
     def destroy
       @task.destroy
-      redirect_to tasks_url, notice: 'Task was successfully destroyed.'
+      redirect_to params['refer'].blank? ? @task : params['refer'], notice: 'Task was successfully destroyed.'
     end
 
     private
