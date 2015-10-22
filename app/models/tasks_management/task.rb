@@ -5,7 +5,7 @@ module TasksManagement
   	has_many :sub_tasks, class_name: "Task", foreign_key: "parent_id"
   	belongs_to :parent, class_name: "Task"
 
-  	enum priority: [:high, :medium, :low]
+  	enum priority: [:low, :medium, :high]
   	enum state: [:pending, :rejected, :started, :finished, :accepted]
 
   	after_save do
